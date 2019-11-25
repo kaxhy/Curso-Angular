@@ -1,6 +1,6 @@
 class Persona {
 
-    constructor(nombre, edad,){
+    constructor(nombre, edad){
         this.nombre = nombre
         this.edad = edad
     }
@@ -20,3 +20,16 @@ p2.color = 'amarillos'
 console.log(p1,p2)
 p1.saludar
 p2.saludar
+
+class Alumno extends Persona {
+    constructor(nombre, edad, curso){
+        super (nombre, edad)
+        this.curso = curso
+    }
+    saludar(){
+        super.saludar()
+        console.log(`del curso ${this.curso }`)
+    }
+}
+const a1 = new Alumno('Ernesto',32,'Angular')
+a1.saludar
