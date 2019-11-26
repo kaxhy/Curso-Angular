@@ -1,0 +1,32 @@
+/** DIA 1**/
+
+https://github.com/alce65
+
+npm i -g live-server  Tambien como plugin en VSC Live Server
+Se ejecuta con live-server en comando o boton en VSC
+
+ng new angular-aubay2 -p aub --routing  ( -p en vez de app)
+
+
+**************Extensiones VSC****************
+Spanish
+live-server 
+Angular Snippets  (te ahorra porque crea bloques) John Papa 
+Angular 8 Snippets - TypeScript, Html, Angular Material, ngRx, RxJS & Flex Layout |  Mikael Morlund
+Angular Language Service
+Bootstrap 4, Font awesome 4, Font Awesome 5 Free & Pro snippets
+GitLens — Git supercharged
+ESLint dbaeumer.vscode-eslint
+TSLint Microsoft (y ejecutar npm install -g tslint typescript)
+
+
+
+
+/** DIA 2**/
+
+ctrl+space cuando --> import{} from '' sale la ayuda
+ng g m --> crear modulos  --routing ( forma perezosa ) -- module ( parte de otro modulo ( cabecera, etc))
+
+ng g m core -m app-> Base de los staticos ( cabecera, pie, menu) nombre -m donde importa
+ng g m home --routing -m  app -> Base  ( home) routing para futuro.
+ng g m tareas --routing  -> paginas  ( tareas | about ) no se pone modulo para que sea perezoso.
