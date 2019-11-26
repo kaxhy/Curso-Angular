@@ -1,0 +1,13 @@
+dialog button {
+    margin: 0 0.3rem;
+}
+
+dialog{
+    background: lightgoldenrodyellow;
+}
+
+.completed{
+    text-decoration: line-through;
+    font-style: italic;
+}
+fa-icon{cursor:pointer;}
