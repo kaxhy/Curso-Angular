@@ -30,3 +30,9 @@ ng g m --> crear modulos  --routing ( forma perezosa ) -- module ( parte de otro
 ng g m core -m app-> Base de los staticos ( cabecera, pie, menu) nombre -m donde importa
 ng g m home --routing -m  app -> Base  ( home) routing para futuro.
 ng g m tareas --routing  -> paginas  ( tareas | about ) no se pone modulo para que sea perezoso.
+
+ng g c core/header  --export ==  ng g c header --export -m core  Reiterativo ng g c core/header --export -m core
+ --export ( para que lo puedan ver los otros)
+ --skip-tests ( quita los text unitarios que es el .spec.ts)
+
+ ng g c core/memu -m core ( crea el menu)
