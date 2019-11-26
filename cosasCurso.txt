@@ -47,3 +47,5 @@ ng g c core/header  --export ==  ng g c header --export -m core  Reiterativo ng 
 
 --Crear la clase que es modelo de un componente ( generalizamos todos en una carpeta en vez de en cada Modulo)
  ng g class models/tarea-model
+ 
+  @Output() addTarea: EventEmitter<any>; --> comunicacion entre componentes padres e hijos

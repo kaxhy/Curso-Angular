@@ -16,7 +16,10 @@
         <li class="list-group-item " 
         *ngFor="let tarea of tareas;let i = index" [attr.data-index]="i" >
             <div class="row justify-content-end">
-              <div class="col-10" [ngClass]="{completed: tarea.isCompleted}">{{i+1}} - {{ tarea.nombre  }}</div>  
+              <div class="col-10" >
+                  <span [ngClass]="{completed: tarea.isCompleted}" (blur)="onEditTarea($event,id)">{{ tarea.nombre }}</span>
+                  <span class="boton" (click)="onModTarea($event)" >✍️</span>  
+              </div>                   
               <div class="col-2 float-right ml-auto">
               <div class="form-check form-check-inline" >
                   <label class="form-check-label">
@@ -25,7 +28,8 @@
                       class="form-check-input">                      
                   </label>
               </div>   
-              <fa-icon [icon]="papelera" (click)="onRemoveTarea(i)"></fa-icon>                   
+              <fa-icon [icon]="papelera" (click)="onRemoveTarea(i)"></fa-icon>  
+              
               </div>
             </div>
         </li>
