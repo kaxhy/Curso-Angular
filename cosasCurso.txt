@@ -44,3 +44,6 @@ ng g c core/header  --export ==  ng g c header --export -m core  Reiterativo ng 
 
  ng g c about/about --flat -m about
  ng g c tareas/main -m tareas
+
+--Crear la clase que es modelo de un componente ( generalizamos todos en una carpeta en vez de en cada Modulo)
+ ng g class models/tarea-model
