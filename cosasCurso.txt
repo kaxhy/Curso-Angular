@@ -36,3 +36,11 @@ ng g c core/header  --export ==  ng g c header --export -m core  Reiterativo ng 
  --skip-tests ( quita los text unitarios que es el .spec.ts)
 
  ng g c core/memu -m core ( crea el menu)
+
+ snipers a-r o  ng-r para routers
+
+ --flat sin carpeta
+ ng g c home/home --flat -m home --export
+
+ ng g c about/about --flat -m about
+ ng g c tareas/main -m tareas
