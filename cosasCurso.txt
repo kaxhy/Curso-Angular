@@ -84,3 +84,9 @@ ng test --code-coverage
 http://127.0.0.1:5500/coverage/angular-aubay2/  ( con el live-server)
 
 npm i karma-mocha-reporter -D -->(--save-dev)
+
+//Libreria inmutable (https://immutable-js.github.io/immutable-js/) 
+si se usa changeDetection:ChangeDetectionStrategy.OnPush
+
+/* DETECTA ERROR HTML */ genera el html compilado de las plantillas
+ng serve --aot ( mucho mas lento)
