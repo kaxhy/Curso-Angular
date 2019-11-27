@@ -49,3 +49,8 @@ ng g c core/header  --export ==  ng g c header --export -m core  Reiterativo ng 
  ng g class models/tarea-model
  
   @Output() addTarea: EventEmitter<any>; --> comunicacion entre componentes padres e hijos
+
+-Emmet nonclaruras para escribir rapido
+  
+  p*6>loremt
+  nav>ul>li*5>a>{item $}

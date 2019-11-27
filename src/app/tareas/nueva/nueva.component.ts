@@ -19,7 +19,7 @@ export class NuevaComponent implements OnInit {
     this.fcNombreTarea = new FormControl();
   }
 
-  onAddTarea(eve: Event): void{
+  onSendAdd(eve: Event): void{
     if ( !this.fcNombreTarea.value ) { return; }
     this.newTarea = new TareaModel(
       this.fcNombreTarea.value,

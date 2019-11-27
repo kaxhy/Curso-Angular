@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,Output, EventEmitter, AfterContentInit } from '@angular/core';
 import { TareaModel } from 'src/app/models/tarea.model';
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { EditTareaIf } from 'src/app/models/edit-tarea.interface';
 
 
 @Component({
@@ -9,28 +10,45 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
   templateUrl: './tarea.component.html',
   styleUrls: ['./tarea.component.css']
 })
-export class TareaComponent implements OnInit {
+export class TareaComponent implements OnInit, AfterContentInit {
   @Input() tarea: TareaModel;
+  @Input() i: number;
+  @Output() onDelete: EventEmitter<number>;
+  @Output() onChange: EventEmitter<number>;
+  @Output() onEdit: EventEmitter<EditTareaIf>;
   papelera: IconDefinition ;
   
   constructor() {
-    // falso this.tarea = new TareaModel('prueba');
+    this.onDelete = new  EventEmitter();
+    this.onChange = new  EventEmitter();
+    this.onEdit = new EventEmitter();
     this.papelera = faTrashAlt;
+    
   }
 
   ngOnInit() {
+    // Si se manda clonado no funciona
+    // this.tarea = {... this.tarea};
+    this.tarea.nombre = '';
   }
-  onEditTarea(ev: Event): void {
+
+  ngAfterContentInit(){
 
   }
-  onModTarea(tarea: TareaModel): void {
 
+  onSendEditTarea(ev: any): void {
+    const tareaEdit = {i: this.i, nombre : ev.target.textContent} as EditTareaIf;
+    this.onEdit.next(tareaEdit);
   }
-  onChange(tarea: TareaModel): void {
-
+  onModTarea(ev: any): void {
+    ev.target.previousElementSibling.setAttribute('contenteditable', true);
   }
-  onRemoveTarea(tarea: TareaModel): void {
 
+  onSendChange(): void {
+    this.onChange.next(this.i);
+  }
+  onSendDelte(): void {
+    this.onDelete.next(this.i);
   }
 
 }

@@ -2,9 +2,9 @@
     <label for="txtTombre">Nueva Tarea</label>
     <input type="text" class="form-control"
     [formControl]="fcNombreTarea"
-    (keydown.enter)="onAddTarea($event)"
+    (keydown.enter)="onSendAdd($event)"
     name="nombre" id="txtNombre">      
 </div>
 <div class="row justify-content-end">
-    <div class="col-6 float-left"><button type="button" class="btn btn-primary" (click)="onAddTarea($event)">Añadir</button></div>   
+    <div class="col-6 float-left"><button type="button" class="btn btn-primary" (click)="onSendAdd($event)">Añadir</button></div>   
 </div>
