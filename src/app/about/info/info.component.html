@@ -2,10 +2,28 @@
     <div class="card-header">
         <h4 class="card-title">{{ titulo }}</h4>
     </div>
-    <div class="card-body">        
-        <p class="card-text">Text</p>
+    <div class="card-body">  
+        <!-- details>
+            <summary>
+                <ng-content select="[id='inicio']" ></ng-content>
+            </summary>
+                <ng-content select="[extra]" ></ng-content>
+        </details -->
+
+        <ngb-accordion #acc="ngbAccordion" >
+            <ngb-panel>
+                <ng-template ngbPanelTitle>
+                        <ng-content select="[id='inicio']" ></ng-content>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                        <ng-content select="[extra]" ></ng-content>
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+
     </div>
     <div class="card-footer text-muted">
         <address>{{ autor }}</address>
     </div>
 </div>
+

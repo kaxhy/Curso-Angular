@@ -54,3 +54,14 @@ ng g c core/header  --export ==  ng g c header --export -m core  Reiterativo ng 
   
   p*6>loremt
   nav>ul>li*5>a>{item $}
+
+  // html5.1
+  <details>
+    <summary>
+        titulo
+    </summary>
+        contenido
+</details>
+
+// html5.2
+    <dialog>
