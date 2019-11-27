@@ -82,3 +82,5 @@ cypress (https://www.cypress.io/)
 //Coverage del test 
 ng test --code-coverage
 http://127.0.0.1:5500/coverage/angular-aubay2/  ( con el live-server)
+
+npm i karma-mocha-reporter -D -->(--save-dev)
