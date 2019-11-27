@@ -61,11 +61,11 @@ export class SimpleComponent implements OnInit {
    this.actualizarStore();
   }
 
-  onModTarea(ev: Event): void {
+  onModTarea(ev: any): void {
     ev.target.previousElementSibling.setAttribute('contenteditable', true);
   }
 
-  onEditTarea(ev: Event, i: number): void{
+  onEditTarea(ev: any, i: number): void{
     this.tareas[i] = ev.target.textContent;
     this.actualizarStore();
   }

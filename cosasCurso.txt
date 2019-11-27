@@ -50,7 +50,11 @@ ng g c core/header  --export ==  ng g c header --export -m core  Reiterativo ng 
  
   @Output() addTarea: EventEmitter<any>; --> comunicacion entre componentes padres e hijos
 
--Emmet nonclaruras para escribir rapido
+
+/** DIA 3**/
+
+
+//Emmet nonclaruras para escribir rapido
   
   p*6>loremt
   nav>ul>li*5>a>{item $}
@@ -65,3 +69,12 @@ ng g c core/header  --export ==  ng g c header --export -m core  Reiterativo ng 
 
 // html5.2
     <dialog>
+
+Para textear Unitario:
+JasmineJs (https://jasmine.github.io/) -->default (modulo VSC -> Jasmine code snippets)
+jest  (https://jestjs.io/)
+mocha (https://mochajs.org/)
+
+Prara textear e2e:
+protractortest (https://www.protractortest.org/#/)-->default
+cypress (https://www.cypress.io/)
