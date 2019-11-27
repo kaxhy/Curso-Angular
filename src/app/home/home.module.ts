@@ -8,6 +8,7 @@ import { SaludoComponent } from './saludo/saludo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SaludoRxComponent } from './saludo-rx/saludo-rx.component';
 import { SaludoRefComponent } from './saludo-ref/saludo-ref.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -18,7 +19,8 @@ import { SaludoRefComponent } from './saludo-ref/saludo-ref.component';
     ReactiveFormsModule,
     CommonModule,
     HomeRoutingModule,
-    NgbModule
+    NgbModule,
+    SharedModule
   ],
   exports: []
 })

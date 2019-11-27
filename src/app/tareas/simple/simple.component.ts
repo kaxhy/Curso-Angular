@@ -15,6 +15,7 @@ export class SimpleComponent implements OnInit {
   @ViewChild('confirmar', {static: true}) confirmar: ElementRef;
   storeName: string;
   papelera: IconDefinition ;
+  isEditable: boolean;
 
   constructor() {
     // this.tareas = [] as TareaModel[];
@@ -22,6 +23,7 @@ export class SimpleComponent implements OnInit {
     this.papelera = faTrashAlt;
     this.storeName = 'Tareas';
     // this.tarea = {} as Tareaif;
+    this.isEditable = false;
   }
 
   ngOnInit() {
@@ -62,10 +64,13 @@ export class SimpleComponent implements OnInit {
   }
 
   onModTarea(ev: any): void {
-    ev.target.previousElementSibling.setAttribute('contenteditable', true);
+  this.isEditable = true;
+  console.log(this.isEditable);
+   // ev.target.previousElementSibling.setAttribute('contenteditable', true);
   }
 
   onEditTarea(ev: any, i: number): void{
+    this.isEditable = false;
     this.tareas[i] = ev.target.textContent;
     this.actualizarStore();
   }

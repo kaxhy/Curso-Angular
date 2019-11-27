@@ -10,7 +10,7 @@ export class SaludoRefComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.nodoNombre.nativeElement);
+    //console.log(this.nodoNombre.nativeElement);
   }
 
 }

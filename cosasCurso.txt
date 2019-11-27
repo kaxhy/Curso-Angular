@@ -89,4 +89,9 @@ npm i karma-mocha-reporter -D -->(--save-dev)
 si se usa changeDetection:ChangeDetectionStrategy.OnPush
 
 /* DETECTA ERROR HTML */ genera el html compilado de las plantillas
-ng serve --aot ( mucho mas lento)
+ng serve --aot ( mucho mas lento) tembien esta en angular.json ( poner true)
+
+/Creamos mudulo directivas en compartidos*
+ng g m shared -m app
+ng g directive shared/destacar --export (html)
+ng g directive shared/hacer-editable --export (ts value + html call)
