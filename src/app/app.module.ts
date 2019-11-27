@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -10,6 +10,10 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
+import es from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(es, 'es');
 
 
 @NgModule({
@@ -27,7 +31,9 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
 
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'es'} /* cambia el valor por defecto a español, no sobra en pipes*/
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
