@@ -78,3 +78,7 @@ mocha (https://mochajs.org/)
 Prara textear e2e:
 protractortest (https://www.protractortest.org/#/)-->default
 cypress (https://www.cypress.io/)
+
+//Coverage del test 
+ng test --code-coverage
+http://127.0.0.1:5500/coverage/angular-aubay2/  ( con el live-server)

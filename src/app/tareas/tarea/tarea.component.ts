@@ -23,12 +23,10 @@ export class TareaComponent implements OnInit, AfterContentInit {
     this.onChange = new  EventEmitter();
     this.onEdit = new EventEmitter();
     this.papelera = faTrashAlt;
-    
+    this.tarea = {... this.tarea} as TareaModel;
   }
 
   ngOnInit() {
-    // Si se manda clonado no funciona
-    // this.tarea = {... this.tarea};
     this.tarea.nombre = '';
   }
 
