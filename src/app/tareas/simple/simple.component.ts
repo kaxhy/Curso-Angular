@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { TareaModel } from 'src/app/models/tarea.model';
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { TareasStoreService } from 'src/app/services/tareas-store.service';
 
 @Component({
   selector: 'aub-simple',
@@ -13,22 +14,22 @@ export class SimpleComponent implements OnInit {
   newTarea: TareaModel;
   // tarea:Tareaif;
   @ViewChild('confirmar', {static: true}) confirmar: ElementRef;
-  storeName: string;
   papelera: IconDefinition ;
   isEditable: boolean;
 
-  constructor() {
+  constructor(private tareasStoreService: TareasStoreService) {
     // this.tareas = [] as TareaModel[];
     this.newTarea = new TareaModel();
     this.papelera = faTrashAlt;
-    this.storeName = 'Tareas';
+
     // this.tarea = {} as Tareaif;
     this.isEditable = false;
   }
 
   ngOnInit() {
 
-    this.tareas = ( JSON.parse(localStorage.getItem(this.storeName)) || [] ) as TareaModel[];
+    this.tareas = this.tareasStoreService.getTareas();
+    // ( JSON.parse(localStorage.getItem(this.storeName)) || [] ) as TareaModel[];
 
   }
 
@@ -46,14 +47,14 @@ export class SimpleComponent implements OnInit {
   }
 
   onDeleteTareas(confirma): void {
-    if(confirma){
+    if (confirma) {
       this.tareas = [] as TareaModel[];
-      this.actualizarStore();
+      this.tareasStoreService.removeTareas();
     }
     this.confirmar.nativeElement.close();
   }
 
-  onChange(tarea: TareaModel ): void{
+  onChange(tarea: TareaModel ): void {
     console.log(tarea);
     this.actualizarStore();
   }
@@ -69,14 +70,14 @@ export class SimpleComponent implements OnInit {
    // ev.target.previousElementSibling.setAttribute('contenteditable', true);
   }
 
-  onEditTarea(ev: any, i: number): void{
+  onEditTarea(ev: any, i: number): void {
     this.isEditable = false;
     this.tareas[i] = ev.target.textContent;
     this.actualizarStore();
   }
-  
 
   private actualizarStore(): void {
-    localStorage.setItem(this.storeName, JSON.stringify(this.tareas));
+    this.tareasStoreService.setTareas(this.tareas);
+    // localStorage.setItem(this.storeName, JSON.stringify(this.tareas));
   }
 }

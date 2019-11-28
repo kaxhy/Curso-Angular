@@ -3,6 +3,7 @@ import { TareaModel } from 'src/app/models/tarea.model';
 import { EditTareaIf } from 'src/app/models/edit-tarea.interface';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { TareasStoreService } from 'src/app/services/tareas-store.service';
 
 @Component({
   selector: 'aub-plus',
@@ -11,17 +12,16 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 })
 export class PlusComponent implements OnInit {
   tareas: Array<TareaModel>;
-  storeName: string;
   @ViewChild('confirmar', {static: true}) confirmar: ElementRef;
   papelera: IconDefinition ;
 
-  constructor() {
-    this.storeName = 'Tareas';
+  constructor(private tareasStoreService: TareasStoreService) {
     this.papelera = faTrashAlt;
   }
 
   ngOnInit() {
-    this.tareas = ( JSON.parse(localStorage.getItem(this.storeName)) || [] ) as TareaModel[];
+    this.tareas =  this.tareasStoreService.getTareas();
+    // ( JSON.parse(localStorage.getItem(this.storeName)) || [] ) as TareaModel[];
   }
 
   onAddTarea(tarea: TareaModel): void {
@@ -53,14 +53,15 @@ export class PlusComponent implements OnInit {
   }
 
   onDeleteTareas(confirma): void {
-    if(confirma){
+    if (confirma) {
       this.tareas = [] as TareaModel[];
-      this.actualizarStore();
+      this.tareasStoreService.removeTareas();
     }
     this.confirmar.nativeElement.close();
   }
 
   private actualizarStore(): void {
-    localStorage.setItem(this.storeName, JSON.stringify(this.tareas));
+    this.tareasStoreService.setTareas(this.tareas);
+    // localStorage.setItem(this.storeName, JSON.stringify(this.tareas));
   }
 }

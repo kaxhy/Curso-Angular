@@ -10,7 +10,7 @@ export class FooterComponent implements OnInit {
   fecha: Date;
 
   constructor() {
-    this.autor = 'kaxhy';
+    this.autor = 'Antonio Cachaza Gómez ( Kaxhy )';
   }
 
   ngOnInit() {

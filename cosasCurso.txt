@@ -95,3 +95,11 @@ ng serve --aot ( mucho mas lento) tembien esta en angular.json ( poner true)
 ng g m shared -m app
 ng g directive shared/destacar --export (html)
 ng g directive shared/hacer-editable --export (ts value + html call)
+
+/** DIA 4 **/
+
+/Creamos pipeline
+ng g p shared/truncar --export
+
+/crear servicio
+ng g s services\tareas-store --> falta Registra el servicio en un proveedor (providedIn = root) no hace falta meterlo en app.module.ts

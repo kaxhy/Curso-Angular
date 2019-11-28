@@ -12,6 +12,7 @@ import { SharedModule } from './shared/shared.module';
 
 import es from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
+import { TareasStoreService } from './services/tareas-store.service';
 
 registerLocaleData(es, 'es');
 
@@ -33,6 +34,7 @@ registerLocaleData(es, 'es');
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'es'} /* cambia el valor por defecto a español, no sobra en pipes*/
+    ,/* TareasStoreService  /* Ya no es necesario por el @ del servicio */
   ],
   bootstrap: [AppComponent]
 })
