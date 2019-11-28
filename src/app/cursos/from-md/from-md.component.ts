@@ -36,9 +36,7 @@ export class FromMdComponent implements OnInit {
         Validators.required,
         Validators.minLength(9),
         Validators.pattern('^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$')]],
-       passwd: ['', [
-         Validators.required,
-         Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]],
+       passwd: ['', [ Validators.required ]],
        email: ['@sample.com', []] ,
        coments: ['', []],
        nacim: ['', []],

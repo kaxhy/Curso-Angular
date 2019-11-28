@@ -19,7 +19,13 @@
                 <input type="text" class="form-control"
                 formControlName="dni" oninput="this.value = this.value.toUpperCase()"
                 name="dni" id="dni-md">
-                </div>  
+                </div> 
+                <!--touched && errors (required,minlength) -->
+        <div class="error" *ngIf="formMd.controls.dni.touched && formMd.controls.dni.errors" >
+                <p *ngIf="formMd.controls.dni.errors?.required">Es necesario DNI</p>
+                <p *ngIf="formMd.controls.dni.errors?.minlength">El DNI debe tener 9 caracteres</p>
+                <p *ngIf="!formMd.controls.dni.errors?.minlength && formMd.controls.dni.errors?.pattern">Formato No valido</p>
+             </div> 
             <div class="form-group">
                 <label for="email-md">Correo</label>
                 <input type="email" class="form-control" 
