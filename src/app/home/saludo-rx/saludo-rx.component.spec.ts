@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SaludoRxComponent } from './saludo-rx.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('SaludoRxComponent', () => {
   let component: SaludoRxComponent;
@@ -10,7 +11,7 @@ describe('SaludoRxComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SaludoRxComponent ],
-      imports: [ ReactiveFormsModule, FormsModule]
+      imports: [ ReactiveFormsModule, FormsModule, SharedModule]
     })
     .compileComponents();
   }));

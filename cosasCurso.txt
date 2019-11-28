@@ -27,7 +27,7 @@ TSLint Microsoft (y ejecutar npm install -g tslint typescript)
 ctrl+space cuando --> import{} from '' sale la ayuda
 ng g m --> crear modulos  --routing ( forma perezosa ) -- module ( parte de otro modulo ( cabecera, etc))
 
-ng g m core -m app-> Base de los staticos ( cabecera, pie, menu) nombre -m donde importa
+ng g m core -m app -> Base de los staticos ( cabecera, pie, menu) nombre -m donde importa
 ng g m home --routing -m  app -> Base  ( home) routing para futuro.
 ng g m tareas --routing  -> paginas  ( tareas | about ) no se pone modulo para que sea perezoso.
 
@@ -103,3 +103,25 @@ ng g p shared/truncar --export
 
 /crear servicio
 ng g s services\tareas-store --> falta Registra el servicio en un proveedor (providedIn = root) no hace falta meterlo en app.module.ts
+
+/Usar shared module para exportar los 3 que mas se usen
+
+/*/*/*si pulsas alt delente de cada linea te sirve para escribir multilineas identicas
+
+//Creamos modulo nuevo y lo añadimos al menu
+ng g m cursos
+ng g m cursos --routing --force ( force forzar rescribirlo a 0)
+ng g c cursos/cursos --flat -m cursos ( flat no crea carpeta hija )
+ng g c cursos/from-td
+ng g c cursos/from-md
+
+//operador Elvis ? permite no seguir si no tiene la propiedad sin ERROR
+ -- Este rompe              -- Este OK
+refDNI.errors.required  = refDNI.errors?.required
+
+https://angular-templates.io/tutorials/about/angular-forms-and-validations
+
+pattern = "^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$" para validar el DNI 
+
+
+// operador de bounce observables angular (https://stackoverflow.com/questions/32051273/angular-and-debounce)

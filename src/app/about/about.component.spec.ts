@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AboutComponent } from './about.component';
 import { InfoComponent } from './info/info.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from '../shared/shared.module';
 
 describe('AboutComponent', () => {
   let component: AboutComponent;
@@ -11,7 +12,7 @@ describe('AboutComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AboutComponent, InfoComponent ],
-      imports: [NgbModule,]
+      imports: [NgbModule, SharedModule ]
     })
     .compileComponents();
   }));
