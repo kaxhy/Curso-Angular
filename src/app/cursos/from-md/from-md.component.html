@@ -1,5 +1,5 @@
 <h3>Fomulario Model-Driven (Reactivo)</h3>
-<form name="form-md" id ="form-md" [formGroup]="formMd">
+<form name="form-md" id ="form-md" [formGroup]="formMd" (submit)="onSubmit($event)">
         <fieldset>
             <legend>Datos de usuario</legend>
             <div class="form-group">
