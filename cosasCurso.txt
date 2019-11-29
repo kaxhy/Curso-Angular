@@ -128,4 +128,7 @@ pattern = "^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$" para validar el DNI
 
 /** DIA 5 **/
 
-npm i json-server
+npm install -g json-server
+PAra lanzarar se crea un fichero... asi que pongamos una carpeta (api)
+json-server db.json
+db.json --> Modificar el json para crear servicios.
