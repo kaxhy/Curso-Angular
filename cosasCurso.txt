@@ -54,12 +54,12 @@ ng g c core/header  --export ==  ng g c header --export -m core  Reiterativo ng 
 /** DIA 3**/
 
 
-//Emmet nonclaruras para escribir rapido
+//Emmet nomenclaruras para escribir rapido
   
   p*6>loremt
   nav>ul>li*5>a>{item $}
 
-  // html5.1
+// Elemento nuevo en  html5.1
   <details>
     <summary>
         titulo
@@ -67,7 +67,7 @@ ng g c core/header  --export ==  ng g c header --export -m core  Reiterativo ng 
         contenido
 </details>
 
-// html5.2
+// Elemento nuevo en  html5.2
     <dialog>
 
 Para textear Unitario:
@@ -91,20 +91,20 @@ si se usa changeDetection:ChangeDetectionStrategy.OnPush
 /* DETECTA ERROR HTML */ genera el html compilado de las plantillas
 ng serve --aot ( mucho mas lento) tembien esta en angular.json ( poner true)
 
-/Creamos mudulo directivas en compartidos*
+//Creamos modulo directivas en compartidos*
 ng g m shared -m app
 ng g directive shared/destacar --export (html)
 ng g directive shared/hacer-editable --export (ts value + html call)
 
 /** DIA 4 **/
 
-/Creamos pipeline
+//Creamos pipeline
 ng g p shared/truncar --export
 
-/crear servicio
+//crear servicio
 ng g s services\tareas-store --> falta Registra el servicio en un proveedor (providedIn = root) no hace falta meterlo en app.module.ts
 
-/Usar shared module para exportar los 3 que mas se usen
+//Usar shared module para exportar los 3 que mas se usen
 
 /*/*/*si pulsas alt delente de cada linea te sirve para escribir multilineas identicas
 
@@ -132,3 +132,4 @@ npm install -g json-server
 PAra lanzarar se crea un fichero... asi que pongamos una carpeta (api)
 json-server db.json
 db.json --> Modificar el json para crear servicios.
+
