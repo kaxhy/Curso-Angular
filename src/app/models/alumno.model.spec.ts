@@ -1,4 +1,4 @@
-import { AlumnoModel } from './alumno-model';
+import { AlumnoModel } from './alumno.model';
 
 describe('AlumnoModel', () => {
   it('should create an instance', () => {

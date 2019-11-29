@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MaestroDatos, AlumnoModel } from 'src/app/models/alumno-model';
+import { MaestroDatos, AlumnoModel } from 'src/app/models/alumno.model';
 import { TURNOS, CURSOS } from 'src/app/models/cursos.data';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PasswordValidator } from 'src/app/shared/validators';

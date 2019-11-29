@@ -125,3 +125,7 @@ pattern = "^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$" para validar el DNI
 
 
 // operador de bounce observables angular (https://stackoverflow.com/questions/32051273/angular-and-debounce)
+
+/** DIA 5 **/
+
+npm i json-server

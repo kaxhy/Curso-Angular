@@ -1,0 +1,16 @@
+<h3>Mock Libros</h3>
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="Busca un libro" 
+  [formControl]="fcLibros" (keydown.enter)="onSearchAsic($event)" >  
+</div>
+<button type="button"  (click)="onSearch($event)" class="btn btn-primary">Buscar Tonto</button>
+<button type="button"  (click)="onSearchAsic($event)" class="btn btn-primary">Buscar Asincrono</button>
+<div *ngIf="libros.length">
+    <h3>Relustado</h3>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let libro of libros"> 
+          ( {{libro.autores}} ) -  {{libro.titulo | uppercase}}
+        </li>
+    </ul>
+
+</div>

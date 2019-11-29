@@ -1,4 +1,4 @@
-import { MaestroDatos } from './alumno-model';
+import { MaestroDatos } from './alumno.model';
 
 export const TURNOS: Array<MaestroDatos> = [
     new MaestroDatos('M','Mañana','De 9:00 - 14:00'),
